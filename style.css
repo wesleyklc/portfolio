@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     /* Fundo preenchido com uma imagem centralizada e fixa */
-    background: url(fotos/fundo.jpg) no-repeat center center fixed;
+    background: url(fundo.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
