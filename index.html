@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon do site -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Menu de navegação: cada link mostra uma seção interna do site -->
+    <nav>
+        <ul>
+            <!-- Cada item do menu chama uma seção diferente -->
+            <li><a href="#sobre" class="menu-link">Sobre mim</a></li>
+            <li><a href="#formacao" class="menu-link">Formação educacional</a></li>
+            <li><a href="#portfolio" class="menu-link">Portfólio</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção "Sobre mim" -->
+    <section id="sobre" class="secao ativa">
+        <h2>Sobre mim</h2>
+        <p>Olá! Me chamo Wesley Kulecza e sou um desenvolvedor em formação apaixonado por tecnologia e inovação. Busco sempre aprender e compartilhar conhecimento.</p>
+        <p>Tenho interesse tanto em desenvolvimento front end quanto back end. Gosto de enfrentar desafios e resolver problemas de forma criativa. </p>
+        <p>Valorizo o trabalho em equipe, a colaboração e acredito que o aprendizado é um processo contínuo. Estou sempre em busca de novas oportunidades para crescer profissionalmente e contribuir com projetos inovadores.</p>
+        <p>No tempo livre, gosto de explorar novas ferramentas, participar de comunidades de tecnologia e compartilhar dicas com outros desenvolvedores.</p>
+    </section>
+
+    <!-- Seção "Formação educacional" -->
+    <section id="formacao" class="secao">
+        <h2>Formação educacional</h2>
+        <p>Graduado em Manutenção de Aeronaves de Asas Rotativas pelo Centro de Instrução de Aviação do Exército.</p>
+        <p>Graduando em Análise e Desenvolvimento de Sistemas pela faculdade UNINTER.</p> 
+        <p>Curso de Python pela plataforma Curso em Vídeo.</p>
+    </section>
+
+    <!-- Seção "Portfólio" -->
+    <section id="portfolio" class="secao">
+        <h2>Portfólio</h2>
+        <ul>
+            <li>
+                <a href="https://github.com/wesleyklc/kulecza" target="_blank" rel="noopener">
+                    https://github.com/wesleyklc/kulecza
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Seção "Contato" com formulário -->
+    <section id="contato" class="secao">
+        <h2>Contato</h2>
+        <!-- Formulário de contato com campos obrigatórios -->
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <input type="mensagem" id="mensagem" name="mensagem" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Script para alternar as seções do site sem recarregar a página -->
+    <script>
+    // Seleciona todos os links do menu pelo seletor de classe
+    const links = document.querySelectorAll('.menu-link');
+    // Seleciona todas as seções do site
+    const secoes = document.querySelectorAll('.secao');
+
+    // Para cada link do menu, adiciona um evento de clique
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Impede o comportamento padrão do link (rolar a página)
+            // Remove a classe 'ativa' de todas as seções, ocultando-as
+            secoes.forEach(secao => secao.classList.remove('ativa'));
+            // Pega o id da seção a ser exibida a partir do href do link
+            const id = this.getAttribute('href').replace('#', '');
+            // Adiciona a classe 'ativa' à seção correspondente, tornando-a visível
+            document.getElementById(id).classList.add('ativa');
+        });
+    });
+    </script>
+</body>
+</html>
